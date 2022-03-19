@@ -1,6 +1,5 @@
 import image1 from '../src/images/image3.png'
 import './App.css';
-import Header_home from './Usercomponents/Header_home';
 import LandingPage from './Usercomponents/LandingPage';
 import ProtectedRoute from './ProtectedRoute';
 import {
@@ -10,12 +9,10 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Usercomponents/Home';
-import Login from './Usercomponents/Login';
 import Signup from './Usercomponents/Signup';
-import Header_landingPage from './Usercomponents/Header_landingPage';
 
-import { useState } from 'react';
-import { useEffect } from 'react';
+
+
 import Viewprofile from './Usercomponents/Viewprofile';
 import Editprofile from './Usercomponents/Editprofile';
 import Addfund from './Usercomponents/Addfund';

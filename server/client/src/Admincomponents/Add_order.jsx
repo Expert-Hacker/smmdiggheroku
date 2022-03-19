@@ -182,7 +182,7 @@ function Add_order(props) {
                             <select name="" id="" fullWidth className='form-control' onChange={handlecategoryChanges}>
                                 {
                                     category.map((cat,ind)=>(
-                                        <option value={cat}>{cat}</option>
+                                        <option value={cat} key={ind}>{cat}</option>
                                     ))
                                 }
                             </select>

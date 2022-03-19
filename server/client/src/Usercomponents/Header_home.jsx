@@ -34,7 +34,7 @@ function Header_home(props) {
               
                 <ul className="d-flex justify-content-between container-fluid">
                     <div>
-                        <li><Link to="/"><img className="logo logo_png" src={logo} alt="logo" height="50px" width="50px" className=""/></Link></li>
+                        <li><Link to="/"><img className="logo logo_png" src={logo} alt="logo" height="50px" width="50px" /></Link></li>
                     </div>
                     {/* <div id="value">
                         {cnt    }

@@ -23,55 +23,61 @@ function Modals(props) {
    }, [])
   async function fetchOrder()
    {
-    setstate1(false)
-    setstate2(false)
-    setstate3(false)
-    setstate4(false)
-    setstate5(false)
-    setstate6(false)
 
-  
-    let resp= await fetch(`/findbyOrderID/${props.id}`,{
-        method:"GET",
-        headers:{
-            "Content-type":"application/json"
+        try {
+            console.log("KEERTHAN",props.id)
+            setstate1(false)
+            setstate2(false)
+            setstate3(false)
+            setstate4(false)
+            setstate5(false)
+            setstate6(false)
+        
+          
+            let resp= await fetch(`/findbyOrderID/${props.id}`,{
+                method:"GET",
+                headers:{
+                    "Content-type":"application/json"
+                }
+            })
+            let data=await resp.json();
+            setDisabled(false)
+            setLoading(false)
+            setOrder(data)
+            // alert(data.status)
+           
+        
+           switch (data.status) {
+               case "Ordered":
+                  return setstate1(true)
+                   break;
+                case "Pending":
+                  return  setstate2(true)
+                    break;
+                case "inprogress":
+                   return setstate3(true)
+                    break;
+                case "cancelled":
+                   return setstate4(true)
+                    break;
+                case "completed":
+                   return setstate5(true)
+                    break;
+                case "cancelledandferunded":
+                   return setstate6(true)
+                    break;
+                    default:
+                        setstate1(false)
+                        setstate2(false)
+                        setstate3(false)
+                        setstate4(false)
+                        setstate5(false)
+                        setstate6(false)
+        
+           }
+        } catch (error) {
+            console.log("something wrong")
         }
-    })
-    let data=await resp.json();
-    setDisabled(false)
-    setLoading(false)
-    setOrder(data)
-    // alert(data.status)
-   
-
-   switch (data.status) {
-       case "Ordered":
-          return setstate1(true)
-           break;
-        case "Pending":
-          return  setstate2(true)
-            break;
-        case "inprogress":
-           return setstate3(true)
-            break;
-        case "cancelled":
-           return setstate4(true)
-            break;
-        case "completed":
-           return setstate5(true)
-            break;
-        case "cancelledandferunded":
-           return setstate6(true)
-            break;
-            default:
-                setstate1(false)
-                setstate2(false)
-                setstate3(false)
-                setstate4(false)
-                setstate5(false)
-                setstate6(false)
-
-   }
   
    }
    function refresh()

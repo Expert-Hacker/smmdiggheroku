@@ -4,16 +4,21 @@ import moment from 'moment';
 import Helmet from 'react-helmet';
 import Add_order from './Add_order';
 import AdminHeader from './AdminHeader';
+import Modals from './Modals';
 function Orders() {
     const[deleting,setDeleting]=useState(false)
     const[orders,setOrders]=useState([]);
     const[show,setShow]=useState(false)
+    const[modalShow,setmodalShow]=useState(false)
+    const[total, setTotal]=useState()
+    const[id,setId]=useState()
+    const[user,setUser]=useState()
     useEffect(() => {
         fetchAllorders();
     }, [])
     async function fetchAllorders()
     {
-        let resp= await fetch('/fetchAllorders',{
+        let resp= await fetch('/fetchAllorders1',{
             method:"GET",
             headers:{
                 "Content-type":"application/json"
@@ -66,7 +71,18 @@ function Orders() {
     {
         setShow(false);
     }
-
+    function handleClose2()
+    {
+        setmodalShow(false)
+    }
+    function editOrder(id,tot,usr)
+    {
+        setmodalShow(true)
+        setId(id)
+        console.log("ID", id)
+        setTotal(tot)
+        setUser(usr)
+    }
 
     return (
         <div>
@@ -121,9 +137,9 @@ function Orders() {
             <tbody>
                
                 {orders.map((info,index)=>(
-                     <tr>
+                     <tr key={index}>
                     <td>{index+1}</td>
-                    <td><i class="fas fa-trash-alt" onClick={()=>deleteOrder(info._id)}></i></td>
+                    <td><i class="fas fa-trash-alt mr-3" onClick={()=>deleteOrder(info._id)}></i><i class="far fa-edit" onClick={()=>editOrder(info._id, info.total,info.user)}></i></td>
                     <td>{info.user}</td>
                     <td>{decodeURIComponent(info.category)}</td>
                     <td>{info.ID} - {info.service}</td>
@@ -139,6 +155,7 @@ function Orders() {
             </tbody>
             </table>
             <Add_order show={show} handleClose={handleClose}/>
+            <Modals modalShow={modalShow} onHide={handleClose2} id={id} total={total} user={user}/>
         </div>
     )
 }

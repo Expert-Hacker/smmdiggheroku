@@ -14,12 +14,12 @@ function Update() {
     const[id,setId]=useState()
     const[user,setUser]=useState()
     useEffect(() => {
-        fetchAllorders();
+        fetchAllorders1();
     }, [])
     
-    async function fetchAllorders()
+    async function fetchAllorders1()
     {
-        let resp= await fetch('/fetchAllorders',{
+        let resp= await fetch('/fetchAllorders1',{
             method:"GET",
             headers:{
                 "Content-type":"application/json"
@@ -40,7 +40,7 @@ function Update() {
             }
         })
         let data=await resp.json();
-        console.log(data)
+        
         setOrders(data)
         
     }
@@ -48,6 +48,7 @@ function Update() {
     {
         setmodalShow(true)
         setId(id)
+        console.log("ID", id)
         setTotal(tot)
         setUser(usr)
     }
@@ -57,7 +58,7 @@ function Update() {
     }
     function refresh()
     {
-        fetchAllorders();
+        fetchAllorders1();
     }
     return (
         <div>

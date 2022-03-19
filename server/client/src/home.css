@@ -1,13 +1,12 @@
 .home_body1{
   min-height: 100%;
   min-width: 100%;
-  /* display: flex; */
-  justify-content:center !important;
- 
-  /* align-items: center; */
 }
+
 .home_bckgnd{
-  background-color: #5000ca;
+  /* background-color: #5000ca; */
+  background-color: #ffffff;
+  margin: 0px;
 }
 .registerNowBtn{
  border: 2px solid white;
@@ -39,7 +38,7 @@ display: inline-block !important;
   z-index: 1;
 }
 .caption{
-  color: white;
+  color: rgb(0, 0, 0);
   margin: 0px 23rem 30px 0px;
   line-height: 1.5rem;
   font-weight: 500;
@@ -58,6 +57,37 @@ display: inline-block !important;
   left: 0px;
   clip-path: circle(600px at right );
 }
+.grid{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: center;
+  align-items: center
+ 
+
+}
+.section-2{
+display: flex;
+justify-content: center;
+justify-content: space-around;
+}
+.panel-color{
+  background-color: rgb(48, 161, 236);
+}
+.caption1{
+  font-size: 4rem;
+  font-weight: 800;
+}
+.caption-2{
+  font-size: 15px;
+}
+.login-name{
+  font-size: 1.6rem;
+  font-weight: 600;
+  
+}
+.login-name span , .caption1 span{
+  background: linear-gradient(360deg, rgb(202, 223, 255) 8px, transparent 20px) 0 1.1em
+}
 
     
        
@@ -66,6 +96,7 @@ display: inline-block !important;
 /* ------------------------------- media Query ------------------------------ */
 @media only screen and (max-width:415px){
   .home_body1{
+    display: flex;
     flex-direction: column;
   }
   .style{
@@ -91,84 +122,24 @@ display: inline-block !important;
     width: 180px !important;
   }
 }
-@media only screen and (min-width:415px) and (max-width:512px){
-  .home_body1{
-    flex-direction: column;
-  }
-  /* .style{
-    background-color: rgba(228,212,237,255);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    clip-path: circle(200px at right );
-  } */
-  .head_home{
-    font-size: 62px;
-    font-family: 'Montserrat',sans-serif ;
 
-  }
-  .caption{
-    margin: 12px 0rem 12px 0px;
-    
-   
-  }
-  .btnn{
-    width: 180px !important;
-  }
+@media only screen and (min-width:415px) and (max-width:512px){
+  
 }
 @media only screen and (max-width:450px){
-  .style{
-    background-color: #5000ca;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    clip-path: circle(250px at right ) !important;
-  }
-  .style2{
-    background-color: #5000ca;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    clip-path: circle(120px at left ) !important;
-  }
+  
 }
-@media only screen and (max-width:380px){
-  .style{
-    background-color: #6713e6;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    clip-path: circle(220px at right ) !important;
-  }
-  .style2{
-    background-color: #5000ca;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    clip-path: circle(90px at left ) !important;
-  }
+@media only screen and (max-width:890px){
+ .section-2{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+ }
 }
 
 @media only screen and (max-width:563px){
-  .style2{
-    background-color: #5000ca;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 200px;
-    left: 0px;
-    clip-path: circle(150px at left );
-  }
+  
 }
 @media only screen and (max-width:800px){
   .hm_img{
@@ -176,36 +147,20 @@ display: inline-block !important;
   }
 }
 @media only screen and (max-width:992px){
-  .home_body1{
-   display: flex;
-   /* flex-direction: column; */
-  }
+
 }
 @media only screen and (max-width:992px){
-  .style{
-   
-    background-color: #7117f8;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    clip-path: circle(300px at right );
+ 
+}
+@media only screen and (max-width:1018px){
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr;
   }
-  .img_box{
-    /* display: none; */
-  }
-  .head_home{
-    font-size: 55px;
-    font-family: 'Montserrat',sans-serif ;
+}
 
-  }
-  .img_box{
-    z-index: 1; 
-    margin-top: 45px;
-  }
-  .textbox{
-    margin-top: 45px !important;
-    z-index: 1;
+@media only screen and (max-width:669px){
+  .login-code{
+    
   }
 }
